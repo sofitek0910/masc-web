@@ -1,0 +1,352 @@
+@import "../theme/_theme";
+
+.header {
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("backgroundColor");
+  }
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 15px;
+}
+
+/* #editor *{ font-family : monospace !important;font-size: 16px 
+  !important;direction:ltr !important;text-align:left !important;} */
+
+/* .ace-editor {
+  font-family: monospace !important;
+}  */
+.ace_editor {
+  overflow: scroll !important;
+}
+
+.ace_scrollbar-v {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+.ace_scrollbar-h {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+}
+.ace_scroller {
+  overflow: unset !important;
+}
+.header-left-input {
+  border: none;
+  width: 84.1%;
+  height: 38px;
+  outline: none;
+  color: white;
+  padding: 5px;
+  padding-left: 15px;
+  margin-right: 1%;
+  @include themify($themes) {
+    background-color: themed("backgroundColor");
+    color: themed("textColor");
+  }
+}
+.request-btn {
+  background-color: #6346b9;
+  border: none;
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+  height: 39px;
+  width: 14.9%;
+  opacity: 1;
+  padding-top: 3px;
+  margin-top: -2px;
+}
+.request-btn:hover {
+  opacity: 0.8;
+}
+
+.horizontal-line {
+  border: 1px solid #484848;
+}
+
+.veritical-line {
+  border: 1px solid #484848;
+  width: 99.7%;
+}
+
+.status-btn {
+  background-color: #75ba24;
+  width: fit-content;
+  padding: 6px;
+  border: none;
+  outline: none;
+  margin: 4px;
+  color: #cbcbaf;
+  font-size: 12px;
+}
+.not-found-btn {
+  background-color: #ec8702;
+  width: fit-content;
+  padding: 6px;
+  border: none;
+  outline: none;
+  margin: 4px;
+  color: #cbcbaf;
+  font-size: 12px;
+}
+
+.speed-btn {
+  background-color: #3a3a3a;
+  width: fit-content;
+  padding: 6px;
+  border: none;
+  outline: none;
+  margin: 4px;
+  font-size: 12px;
+}
+
+.length-btn {
+  background-color: #3a3a3a;
+  width: fit-content;
+  padding: 6px;
+  border: none;
+  outline: none;
+  margin: 4px;
+  font-size: 12px;
+}
+
+.flexbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flexbox .one {
+  height: 100%;
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("backgroundColor");
+  }
+  #aboveditor {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 20px;
+    .ResizePanel-module_ContainerVertical__1_kb6 {
+      .ResizePanel-module_ResizeContentVertical__1OGHY {
+       // height: inherit !important;
+      } 
+    }
+  }
+}
+
+.flexbox .twi {
+  display: block;
+}
+
+.ace_scroller {
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("backgroundColor");
+  }
+}
+
+.ace-merbivore .ace_constant.ace_numeric {
+  color: #a896ff !important;
+}
+
+.ace_lparen {
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+}
+.ace_line {
+  color: #7ecf2b;
+}
+
+.editor-container {
+  display: flex;
+  flex-grow: 2;
+  flex-flow: row nowrap;
+}
+
+.editor-container-inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 101vw;
+  height: 94vh;
+  border: 1px solid #000000;
+  @include themify($themes) {
+    background-color: themed("backgroundColor");
+  }
+  margin-top: -1px;
+  margin-left: -1px;
+  overflow: hidden;
+}
+
+.asset-second-column-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #aaa8a8;
+}
+
+.request-column,
+.response-column {
+  height: 100vh;
+  width: 100%;
+  border-left: 1px solid #aaa8a8;
+  resize: horizontal;
+  overflow: auto;
+}
+
+.rst__rowContents {
+  background-color: inherit !important;
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+  border: transparent !important;
+  box-shadow: none !important;
+}
+.rst__rowContents:hover {
+  background-color: inherit !important;
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+  border: transparent !important;
+  box-shadow: none !important;
+}
+.rst__moveHandle {
+  background: url("../../../assets/img/circle.png") no-repeat center !important;
+  background-size: 21px 21px !important;
+  border-radius: none !important;
+  border: transparent !important;
+  box-shadow: none !important;
+}
+.rst__moveHandle:hover {
+  background-color: #6346b9 !important;
+  box-shadow: none !important;
+}
+.rst__rowLabel {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100px;
+}
+
+.rst__lineHalfHorizontalRight::before,
+.rst__lineFullVertical::after,
+.rst__lineHalfVerticalTop::after,
+.rst__lineHalfVerticalBottom::after {
+  background-color: white !important;
+}
+
+.miniPopup {
+  position: absolute;
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("backgroundColor");
+  }
+  width: 244px;
+  border-radius: 6px;
+  margin: 4px;
+  left: 2px;
+  z-index: 100;
+}
+
+.miniPopup {
+  padding-left: 0px;
+  cursor: pointer;
+}
+.miniPopup p {
+  padding: 6px 40px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+.miniPopup p:hover {
+  background-color: #e0e0e0 !important;
+}
+
+.rst__rowWrapper {
+  padding: 0px !important;
+  /* height: 32px !important; */
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.b-example-divider {
+  width: 100%;
+  background-color: #c0c0c0;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.treeTitleInput {
+  height: 30px;
+  width: 130px;
+  font-style: italic;
+  background: transparent;
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+  border: transparent;
+  outline: transparent;
+}
+
+.ResizePanel-module_ResizeBarHorizontal__3TBZ5:hover {
+  cursor: col-resize;
+}
+.ResizePanel-module_ResizeBarVertical__2LUZV:hover {
+  cursor: row-resize;
+}
+.ResizePanel-module_ResizeBarVertical__2LUZV {
+  /* border-bottom: 1px solid #484848; */
+  height: 4px !important;
+  margin: 0px !important;
+}
+
+.ResizePanel-module_ResizeBarHorizontal__3TBZ5 {
+  border-right: 1px solid #aaa8a8;
+  /* border: none; */
+  width: 0px !important;
+  margin: 0px !important;
+}
+
+.ace-merbivore .ace_gutter {
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("backgroundColor");
+  }
+}
+.ace_scrollbar-v {
+  @include themify($themes) {
+    background-color: themed("backgroundColor");
+  }
+}
+.ace_gutter-layer {
+  color: #484848;
+}
+
+.rst__node:hover,
+rst__node:active {
+  background-color: #343434 !important;
+}
+.rst__row:hover {
+  background-color: inherit !important;
+}
+
+.ace_content {
+  font-family: RobotoMono-Regular;
+  font-size: 11px;
+  @include themify($themes) {
+    background-color: themed("backgroundColor");
+  }
+}

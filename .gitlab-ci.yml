@@ -1,0 +1,82 @@
+stages:
+  - build
+  - update
+
+variables:
+  # When using dind service we need to instruct docker, to talk with the
+  # daemon started inside of the service. The daemon is available with
+  # a network connection instead of the default /var/run/docker.sock socket.
+  #
+  # The 'docker' hostname is the alias of the service container as described at
+  # https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#accessing-the-services
+  #
+  # Note that if you're using Kubernetes executor, the variable should be set to
+  # tcp://localhost:2375 because of how Kubernetes executor connects services
+  # to the job container
+  DOCKER_HOST: tcp://docker:2375/
+  # When using dind, it's wise to use the overlayfs driver for
+  # improved performance.
+  DOCKER_DRIVER: overlay2
+  KUBECONFIG: "/kube/config"
+  NAMESPACE: "masc-web-jgen"
+  RELEASE_NAME: "io-neux-masc-web-jgen"
+  TILER_VERSION: "v1.13.7-v2.14.1"
+  GIT_DEPTH: 0
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - docker info
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - apk add --no-cache git
+    - ls -al
+    - export BUILD_NAME=$(git describe --tags)
+  #    - sed -i "s/777/$BUILD_NAME/g" resource/version.py
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:latest
+    - docker build -t $CI_REGISTRY_IMAGE:$BUILD_NAME -t $CI_REGISTRY_IMAGE:latest  --cache-from  $CI_REGISTRY_IMAGE:latest .
+    - docker push --all-tags $CI_REGISTRY_IMAGE
+
+  only:
+    - main
+    - /^issue.*$/
+    
+update:
+  stage: update
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - eval $(ssh-agent -s)
+    - echo "$id_rsa_gitlab_argo_nxcluster" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+    # - echo "$id_rsa_gitlab_argo_nxcluster" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+    - git config --global user.email "ci-cd@gitlab.com"
+    - git config --global user.name "cd / cd"
+    - export message="$(git log -1 --pretty=%B)"
+    - export BUILD_NAME=$(git describe --tags)
+  script:
+    - git clone -b main --single-branch git@gitlab.com:neux/nx_cluster.git
+    - cd nx_cluster/
+    - cd k8s.hz3/masc-web
+    - >
+      sed -i "s/tag: .*/tag: $BUILD_NAME/g" values.yaml
+    - >
+      sed -i "s/appVersion: \".*\"/appVersion: \"$BUILD_NAME\"/g" Chart.yaml
+    - >
+      sed -i "s/version: .*/version: $BUILD_NAME/g" Chart.yaml
+    - >
+      sed -i "s/APP_VERSION: .*/APP_VERSION: $BUILD_NAME/g" values.yaml
+    - git add -A
+    - git commit -m "$message"
+    - git push origin main:main
+  only:
+    - master
+    - /^issue.*$/
+
+

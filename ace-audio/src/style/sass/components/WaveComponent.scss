@@ -1,0 +1,107 @@
+.wave-container {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #919191;
+  border-radius: 25px;
+  padding: 0 10px 10px;
+  .wave-play-button {
+    background:  url('../../../assets/img/arrows.svg') no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    cursor: pointer;
+    &.active {
+      background: url('../../../assets/img/pause.svg') no-repeat;
+      background-size: contain;
+    }
+  }
+  .wave-information {
+    position: relative;
+    width: calc(100% - 100px);
+    .wave-bpm {
+      position: absolute;
+      right: 15px;
+      color: #ffffff;
+      top: 5px;
+      z-index: 5;
+    }
+    .wave-duration {
+      position: absolute;
+      right: 15px;
+      background: #000000;
+      color: #ffffff;
+      top: 35px;
+      z-index: 5;
+    }
+    .react-waves {
+      margin: 0px;
+      padding-left: 0px;
+      width: 100%;
+    }
+    .wave-button-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .interactive-button {
+        display: flex;
+        color: #55595c;
+        .wave-button {
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          border: 1px solid #bfbfbf;
+          width: auto;
+          border-radius: 5px;
+          padding: 2px 5px;
+          justify-content: center;
+          cursor: pointer;
+          text-decoration: none;
+          color: #55595c;
+          &:focus, &:hover, &:visited, &:link, &:active {
+            text-decoration: none;
+          }
+          img {
+            width: 25px;
+            height: 25px;
+            margin-right: 2px;
+          }
+        }
+      }
+      .guid-button {
+        color: #55595c;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        border: 1px solid #bfbfbf;
+        width: auto;
+        border-radius: 5px;
+        padding: 2px 5px;
+        justify-content: flex-end;
+        cursor: pointer;
+        word-break: break-all;
+        max-width: calc(100% - 450px);
+        img {
+          width: 25px;
+          height: 25px;
+          margin-right: 5px;
+        }
+        span {
+          overflow: hidden;
+          width: calc(100% - 30px);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.nounderline{
+  text-decoration: none;
+  &:focus, &:hover, &:visited, &:link, &:active {
+    text-decoration: none;
+  }
+}

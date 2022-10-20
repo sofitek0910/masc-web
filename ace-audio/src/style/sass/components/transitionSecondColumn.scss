@@ -1,0 +1,16 @@
+.editor-section {
+  .react-flow {
+    background: #2C2C2C;
+  }
+  .customResizeBorder {
+    cursor: ew-resize;
+    width: 5px;
+    background: gray;
+    display: flex;
+    z-index: 99999;
+    align-items: center ;
+    align-content: center ;
+    justify-content: center;
+    overflow: visible;
+  }
+}

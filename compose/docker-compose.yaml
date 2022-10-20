@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  masc-web-jgen:
+#    command: /bin/sh -c "sleep 3600"
+    build:
+      context: ./../
+      dockerfile: Dockerfile
+    ports:
+      - 8888:80

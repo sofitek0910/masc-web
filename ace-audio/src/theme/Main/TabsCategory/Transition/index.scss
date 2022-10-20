@@ -1,0 +1,20 @@
+#transition {
+  .inner-container {
+    width: 101vw;
+    height: 94vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    background-color: #2c2c2c;  
+    margin: -1px 0px 0px -1px;
+    overflow: hidden;
+  }
+  .second-column-wrapper {    
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-width: 1px 0px;
+      border-style: solid;
+      border-color: #aaa8a8;      
+  }
+}

@@ -1,0 +1,49 @@
+@import "../theme/_theme";
+
+.ButtonSection {
+  @include themify($themes) {
+    background-color: themed("backgroundColor");
+  }
+}
+
+.sequence_btn {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #c07203;
+  border-radius: 50%;
+  margin: 2px;
+  background: #f0a309;
+}
+
+.sequence_card {
+  @include themify($themes) {
+    background-color: themed("backgroundColor");
+    color: themed("textColor");
+  }
+  border-radius: 2px;
+  display: inline-block;
+  height: 40vh;
+  position: relative;
+  width: 100%;
+}
+
+.sequence_card span {
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+  margin: 10px;
+  font-size: small;
+}
+.sequence_card p {
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+}
+
+.foundGuidis-thumb {
+  @include themify($themes) {
+    background-color: themed("dashboardRightContent");
+    color: themed("textColor");
+  }
+  margin-left: 5px;
+}

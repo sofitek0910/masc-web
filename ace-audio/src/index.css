@@ -1,0 +1,102 @@
+.ace_editor::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #323232;
+}
+
+.ace_editor::-webkit-scrollbar {
+  width: 8px;
+  background-color: #323232;
+}
+
+.ace_editor::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #4e4e4e;
+}
+
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #000000;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #c4bebe;
+}
+.inner-request-menu::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #000000;
+}
+
+.inner-request-menu::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+}
+
+.inner-request-menu::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #c4bebe;
+}
+.SortableTree::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #000000;
+}
+
+.SortableTree::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+}
+
+.SortableTree::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #c4bebe;
+}
+#aboveditor::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #000000;
+}
+
+#aboveditor::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+}
+
+#aboveditor::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #c4bebe;
+}
+.sequence_card::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #000000;
+}
+
+.sequence_card::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+}
+
+.sequence_card::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #c4bebe;
+}

@@ -1,0 +1,29 @@
+@import "../theme/_theme";
+
+.recent_assets {
+    display: flex;
+    justify-content: center;
+    @include themify($themes) {
+      background-color: themed("backgroundColor");
+      color: themed("textColor");
+    }
+    position: relative;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    min-height: 350px;
+    height: 350px;    
+    overflow-y: scroll;    
+  }
+
+  .recent_assets .inner_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .recent_assets .assets_title {
+    color: #d0a7c1;
+    margin: 10px;
+    font-size: .7rem;
+    text-align:center;
+  }

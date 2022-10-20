@@ -1,0 +1,18 @@
+.logo_img {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  padding: 5px;
+  z-index: 100;
+}
+.logo_login_btn {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  padding: 5px;
+  z-index: 100;
+}

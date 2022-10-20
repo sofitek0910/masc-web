@@ -1,0 +1,31 @@
+.rst__node-active {
+  background: #343434;
+}
+
+.rst__lineChildren::after {
+  background-color: white;
+}
+.rst__node {
+  height: 25px !important;
+}
+.assetObjects {
+  border: 1px solid #cacaca;
+  display: inline-block;
+  height: 43%;
+  position: relative;
+  width: 93%;
+  margin: 8px;
+}
+
+.assetObjects .assets_title {
+  color: #d0a7c1;
+  margin: 10px;
+  font-size: small;
+  margin-left: 35%;
+}
+
+.SortableTree {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 85%;
+}
